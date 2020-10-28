@@ -1,6 +1,7 @@
 package com.ibrahim.todolist.entities;
 
 import java.util.List;
+import java.util.UUID;
 
 
 public class User {
@@ -9,6 +10,10 @@ public class User {
     private String name;
     private List<Task> tasks;
 
+    public User( String name) {
+        this.id = UUID.randomUUID().toString() ;
+        this.name = name;
+    }
 
     public String getName() {
         return name;
