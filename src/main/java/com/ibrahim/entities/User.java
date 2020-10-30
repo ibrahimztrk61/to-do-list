@@ -1,4 +1,4 @@
-package com.ibrahim.todolist.entities;
+package com.ibrahim.entities;
 
 import java.util.List;
 import java.util.UUID;

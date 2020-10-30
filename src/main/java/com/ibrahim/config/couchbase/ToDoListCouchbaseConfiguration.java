@@ -1,4 +1,4 @@
-package com.ibrahim.todolist.config.couchbase;
+package com.ibrahim.config.couchbase;
 
 import com.couchbase.client.core.env.TimeoutConfig;
 import com.couchbase.client.java.Cluster;

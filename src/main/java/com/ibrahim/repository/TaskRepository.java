@@ -1,8 +1,8 @@
-package com.ibrahim.todolist.repository;
+package com.ibrahim.repository;
 
 import com.couchbase.client.java.Cluster;
 import com.couchbase.client.java.Collection;
-import com.ibrahim.todolist.entities.Task;
+import com.ibrahim.entities.Task;
 import org.springframework.stereotype.Repository;
 
 @Repository

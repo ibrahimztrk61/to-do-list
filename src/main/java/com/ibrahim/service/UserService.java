@@ -1,7 +1,7 @@
-package com.ibrahim.todolist.service;
+package com.ibrahim.service;
 
-import com.ibrahim.todolist.dto.UserDto;
-import com.ibrahim.todolist.repository.UserRepository;
+import com.ibrahim.dto.UserDto;
+import com.ibrahim.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,8 +1,8 @@
-package com.ibrahim.todolist.controllers;
+package com.ibrahim.controllers;
 
 
-import com.ibrahim.todolist.service.TaskService;
-import com.ibrahim.todolist.entities.Task;
+import com.ibrahim.entities.Task;
+import com.ibrahim.service.TaskService;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +17,7 @@ public class TaskController {
         this.taskService=taskService;
     }
 
-    @PostMapping
+    @GetMapping
     public ResponseEntity<Void> createTask(@RequestBody Task task){
         taskService.createTask(task);
         return ResponseEntity.ok().build();

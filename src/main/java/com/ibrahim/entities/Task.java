@@ -1,4 +1,4 @@
-package com.ibrahim.todolist.entities;
+package com.ibrahim.entities;
 
 import java.util.UUID;
 
@@ -7,14 +7,14 @@ public class Task {
     private String id;
     private String category;
     private String description;
-    private Enum status;
+    private TaskStatus taskStatus;
     private String duration;
 
-    public Task(String category, String description, Enum status, String duration) {
+    public Task(String category, String description, TaskStatus taskStatus, String duration) {
         this.id = UUID.randomUUID().toString();
         this.category = category;
         this.description = description;
-        this.status = status;
+        this.taskStatus = taskStatus;
         this.duration = duration;
     }
 
@@ -39,11 +39,11 @@ public class Task {
     }
 
     public Enum getStatus() {
-        return status;
+        return taskStatus;
     }
 
-    public void setStatus(Enum status) {
-        this.status = status;
+    public void setStatus(TaskStatus taskStatus) {
+        this.taskStatus = taskStatus;
     }
 
     public String getDuration() {

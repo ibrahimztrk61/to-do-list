@@ -1,4 +1,4 @@
-package com.ibrahim.todolist;
+package com.ibrahim;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;

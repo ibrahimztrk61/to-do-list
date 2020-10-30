@@ -1,8 +1,5 @@
-package com.ibrahim.todolist.dto;
+package com.ibrahim.dto;
 
-import com.ibrahim.todolist.entities.Task;
-
-import java.util.List;
 import java.util.UUID;
 
 public class UserDto {

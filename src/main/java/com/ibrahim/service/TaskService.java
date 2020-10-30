@@ -1,7 +1,7 @@
-package com.ibrahim.todolist.service;
+package com.ibrahim.service;
 
-import com.ibrahim.todolist.entities.Task;
-import com.ibrahim.todolist.repository.TaskRepository;
+import com.ibrahim.entities.Task;
+import com.ibrahim.repository.TaskRepository;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,4 +1,4 @@
-package com.ibrahim.todolist.config.couchbase;
+package com.ibrahim.config.couchbase;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;

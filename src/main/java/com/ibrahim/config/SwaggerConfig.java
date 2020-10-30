@@ -1,4 +1,4 @@
-package com.ibrahim.todolist.config;
+package com.ibrahim.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
