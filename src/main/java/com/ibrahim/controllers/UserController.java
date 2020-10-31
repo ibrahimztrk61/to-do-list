@@ -21,7 +21,7 @@ public class UserController {
         this.userService = userService;
     }
 
-    @RequestMapping("/users")
+    @PostMapping("/")
     public ResponseEntity<Void> createUser(@PathVariable UserDto userDto) {
         userService.createUser(userDto);
         return ResponseEntity.ok().build();
