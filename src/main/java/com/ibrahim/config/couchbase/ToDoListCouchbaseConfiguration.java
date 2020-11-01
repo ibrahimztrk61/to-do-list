@@ -1,6 +1,7 @@
 package com.ibrahim.config.couchbase;
 
 import com.couchbase.client.core.env.TimeoutConfig;
+import com.couchbase.client.java.Bucket;
 import com.couchbase.client.java.Cluster;
 import com.couchbase.client.java.ClusterOptions;
 import com.couchbase.client.java.Collection;
@@ -48,9 +49,16 @@ public class ToDoListCouchbaseConfiguration {
     }
 
     @Bean
-    public Collection toDoListCollection(Cluster couchbaseCluster) {
-        couchbaseCluster.bucket(couchbaseProperties.getBucketName()).waitUntilReady(Duration.ofSeconds(122));
-        return couchbaseCluster.bucket(couchbaseProperties.getBucketName()).defaultCollection();
+    public Collection userCollection(Cluster couchbaseCluster) {
+        Bucket bucket = couchbaseCluster.bucket(couchbaseProperties.getUserBucketName());
+        bucket.waitUntilReady(Duration.ofSeconds(122));
+        return bucket.defaultCollection();
+    }
+    @Bean
+    public Collection taskCollection(Cluster couchbaseCluster) {
+        Bucket bucket = couchbaseCluster.bucket(couchbaseProperties.getTaskBucketName());
+        bucket.waitUntilReady(Duration.ofSeconds(122));
+        return bucket.defaultCollection();
     }
 
 }

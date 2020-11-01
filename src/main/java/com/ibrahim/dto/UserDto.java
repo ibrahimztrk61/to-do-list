@@ -3,10 +3,11 @@ package com.ibrahim.dto;
 import java.util.UUID;
 
 public class UserDto {
+
     private String id;
     private String name;
 
-    public UserDto( String name) {
+    public UserDto(String name) {
         this.id = UUID.randomUUID().toString() ;
         this.name = name;
     }

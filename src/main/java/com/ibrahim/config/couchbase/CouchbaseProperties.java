@@ -11,7 +11,8 @@ public class CouchbaseProperties {
     private String host;
     private String userName;
     private String password;
-    private String bucketName;
+    private String userBucketName;
+    private String taskBucketName;
 
     public String getHost() {
         return host;
@@ -37,11 +38,19 @@ public class CouchbaseProperties {
         this.password = password;
     }
 
-    public String getBucketName() {
-        return bucketName;
+    public String getUserBucketName() {
+        return userBucketName;
     }
 
-    public void setBucketName(String bucketName) {
-        this.bucketName = bucketName;
+    public void setUserBucketName(String userBucketName) {
+        this.userBucketName = userBucketName;
+    }
+
+    public String getTaskBucketName() {
+        return taskBucketName;
+    }
+
+    public void setTaskBucketName(String taskBucketName) {
+        this.taskBucketName = taskBucketName;
     }
 }
