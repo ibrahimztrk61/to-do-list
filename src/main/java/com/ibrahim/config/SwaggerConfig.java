@@ -27,7 +27,7 @@ public class SwaggerConfig {
     }
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("To Do List")
+                .title("To Do List App")
                 .description("Create excellent to do list")
                 .version("1.0 Version")
                 .build();
