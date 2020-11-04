@@ -7,6 +7,9 @@ public class UserDto {
     private String id;
     private String name;
 
+    public UserDto(){
+    }
+
     public UserDto(String name) {
         this.id = UUID.randomUUID().toString() ;
         this.name = name;

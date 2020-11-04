@@ -27,7 +27,7 @@ public class CouchbaseIndexConfiguration {
         indexManager.createPrimaryIndex(couchbaseProperties.getUserBucketName(),
                 CreatePrimaryQueryIndexOptions.createPrimaryQueryIndexOptions().ignoreIfExists(Boolean.TRUE));
         try{
-            couchbaseCluster.query("CREATE INDEX userId ON `User`(User.id)");
+            couchbaseCluster.query("CREATE INDEX id ON `User`(User.id)");
         }
         catch (Exception e) {
             System.out.println("index error");
