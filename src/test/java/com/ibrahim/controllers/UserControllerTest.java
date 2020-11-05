@@ -32,7 +32,7 @@ class UserControllerTest {
     @Test
     void it_should_create_user() {
         // Given
-        UserDto userRequest = new UserDto();
+        UserDto userRequest = new UserDto("ibrahim");
         userRequest.setName("ibrahim");
 
         // When

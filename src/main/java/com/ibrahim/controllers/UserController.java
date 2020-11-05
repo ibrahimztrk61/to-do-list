@@ -1,9 +1,12 @@
 package com.ibrahim.controllers;
 
 import com.ibrahim.dto.UserDto;
+import com.ibrahim.entities.User;
 import com.ibrahim.service.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 
 @RestController
@@ -22,6 +25,12 @@ public class UserController {
         return ResponseEntity.ok().build();
 
     }
+    @GetMapping
+    public List<UserDto> findAllUsers(){
+       return userService.findAllUsers();
+
+    }
+
 
 }
 
