@@ -27,13 +27,13 @@ public class CouchbaseIndexConfiguration {
         indexManager.createPrimaryIndex(couchbaseProperties.getUserBucketName(),
                 CreatePrimaryQueryIndexOptions.createPrimaryQueryIndexOptions().ignoreIfExists(Boolean.TRUE));
         try{
-            couchbaseCluster.query("CREATE INDEX id ON `User`(User.id)");
+            couchbaseCluster.query("CREATE INDEX PRIMARY ON users");
         }
         catch (Exception e) {
             System.out.println("index error");
         }
-        indexManager.createIndex(couchbaseProperties.getUserBucketName(), "tasks_index",
-                Collections.singletonList("tasks"), CreateQueryIndexOptions.createQueryIndexOptions().ignoreIfExists(Boolean.TRUE));
+        indexManager.createIndex(couchbaseProperties.getUserBucketName(), "users_index",
+                Collections.singletonList("users"), CreateQueryIndexOptions.createQueryIndexOptions().ignoreIfExists(Boolean.TRUE));
 
-    }
+}
 }
