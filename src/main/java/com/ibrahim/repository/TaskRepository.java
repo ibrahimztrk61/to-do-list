@@ -17,7 +17,7 @@ public class TaskRepository {
     private final Cluster couchbaseCluster;
     private final Collection taskCollection;
 
-    public TaskRepository(Cluster couchbaseCluster, @Qualifier("taskCollection") Collection taskCollection) {
+    public TaskRepository(Cluster couchbaseCluster,Collection taskCollection) {
         this.couchbaseCluster = couchbaseCluster;
         this.taskCollection = taskCollection;
     }
