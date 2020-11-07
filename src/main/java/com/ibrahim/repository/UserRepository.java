@@ -6,6 +6,7 @@ import com.couchbase.client.java.kv.GetResult;
 import com.couchbase.client.java.query.QueryResult;
 import com.ibrahim.dto.TaskDto;
 import com.ibrahim.dto.UserDto;
+import com.ibrahim.entities.TaskStatus;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -47,5 +48,12 @@ public class UserRepository {
 
     public void deleteTask(String taskId) {
         userCollection.remove(taskId);
+    }
+
+    public void changeStatus(String taskId, TaskStatus taskStatus) {
+        String statement = String.format("UPDATE `users` USE KEYS %s SET `status`= %s",taskId,taskStatus);
+        QueryResult query = couchbaseCluster.query(statement);
+        query.rowsAsObject();
+
     }
 }

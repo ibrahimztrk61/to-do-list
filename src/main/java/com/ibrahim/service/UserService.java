@@ -1,7 +1,9 @@
 package com.ibrahim.service;
 
+import com.ibrahim.controllers.TaskController;
 import com.ibrahim.dto.TaskDto;
 import com.ibrahim.dto.UserDto;
+import com.ibrahim.entities.TaskStatus;
 import com.ibrahim.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -38,5 +40,9 @@ public class UserService {
 
     public void deleteTask(String taskId) {
         userRepository.deleteTask(taskId);
+    }
+
+    public void chanheStatus(String taskId, TaskStatus taskStatus) {
+        userRepository.changeStatus(taskId, taskStatus);
     }
 }

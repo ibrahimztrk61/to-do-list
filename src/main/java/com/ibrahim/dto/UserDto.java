@@ -19,10 +19,10 @@ public class UserDto {
         this.tasks = Arrays.asList((new Task(id,"","", TaskStatus.TODO,"")));
     }
 
-    public UserDto(String name) {
+    public UserDto(String name,Task task ) {
         this.id = UUID.randomUUID().toString() ;
         this.name = name;
-        this.tasks = Arrays.asList((new Task(id,"","", TaskStatus.TODO,"")));
+        this.tasks = (List<Task>) task;
     }
 
     public String getId() {
@@ -35,5 +35,13 @@ public class UserDto {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
     }
 }

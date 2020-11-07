@@ -2,6 +2,8 @@ package com.ibrahim.controllers;
 
 import com.ibrahim.dto.TaskDto;
 import com.ibrahim.dto.UserDto;
+import com.ibrahim.entities.Task;
+import com.ibrahim.entities.TaskStatus;
 import com.ibrahim.entities.User;
 import com.ibrahim.service.TaskService;
 import com.ibrahim.service.UserService;
@@ -40,7 +42,11 @@ public class UserController {
         taskDto.setUserId(userId);
         userService.createTask(taskDto);
         return ResponseEntity.ok().build();
-
+    }
+    @PostMapping("/{taskId}/changeTask")
+    public ResponseEntity<Void> changeStatus(@PathVariable String taskId,  @RequestBody TaskStatus taskStatus){
+        userService.chanheStatus(taskId,taskStatus);
+        return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/{userId}/deleteUser")
