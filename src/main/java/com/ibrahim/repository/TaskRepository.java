@@ -3,9 +3,8 @@ package com.ibrahim.repository;
 import com.couchbase.client.java.Cluster;
 import com.couchbase.client.java.Collection;
 import com.couchbase.client.java.query.QueryResult;
-import com.ibrahim.dto.TaskDto;
+import com.ibrahim.dtos.TaskDto;
 import com.ibrahim.entities.Task;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;

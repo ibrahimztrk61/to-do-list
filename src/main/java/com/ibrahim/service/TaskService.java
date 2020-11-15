@@ -1,6 +1,6 @@
 package com.ibrahim.service;
 
-import com.ibrahim.dto.TaskDto;
+import com.ibrahim.dtos.TaskDto;
 import com.ibrahim.entities.Task;
 import com.ibrahim.repository.TaskRepository;
 import org.springframework.stereotype.Service;

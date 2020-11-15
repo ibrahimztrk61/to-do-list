@@ -4,8 +4,9 @@ import com.couchbase.client.java.Cluster;
 import com.couchbase.client.java.Collection;
 import com.couchbase.client.java.kv.GetResult;
 import com.couchbase.client.java.query.QueryResult;
-import com.ibrahim.dto.TaskDto;
-import com.ibrahim.dto.UserDto;
+import com.ibrahim.dtos.TaskDto;
+import com.ibrahim.dtos.UpdateTaskDto;
+import com.ibrahim.dtos.UserDto;
 import com.ibrahim.entities.TaskStatus;
 import org.springframework.stereotype.Repository;
 
@@ -26,7 +27,7 @@ public class UserRepository {
         userCollection.insert(userDto.getId(), userDto);
     }
 
-    public List<UserDto> findAllUsers() {
+    public List<UserDto> getAllUsers() {
         String statement = "Select name from users";
         QueryResult query = couchbaseCluster.query(statement);
         return query.rowsAs(UserDto.class);
@@ -38,10 +39,6 @@ public class UserRepository {
         return userDto;
     }
 
-    public void createTask(TaskDto taskDto) {
-        userCollection.insert(taskDto.getUserId(),taskDto);
-    }
-
     public void deleteUser(String userId) {
         userCollection.remove(userId);
     }
@@ -50,10 +47,22 @@ public class UserRepository {
         userCollection.remove(taskId);
     }
 
-    public void changeStatus(String taskId, TaskStatus taskStatus) {
+    public List<UserDto> getUserByName(String userName) {
+        return null;
+    }
+
+    public void createTask(TaskDto taskDto) {
+        userCollection.insert(taskDto.getUserId(),taskDto);
+    }
+
+    public void changeTaskStatus(String taskId, TaskStatus taskStatus) {
         String statement = String.format("UPDATE `users` USE KEYS %s SET `status`= %s",taskId,taskStatus);
         QueryResult query = couchbaseCluster.query(statement);
         query.rowsAsObject();
+
+    }
+
+    public void updateTask(String taskId, UpdateTaskDto taskDto) {
 
     }
 }

@@ -1,9 +1,8 @@
-package com.ibrahim.dto;
+package com.ibrahim.dtos;
 
 import com.ibrahim.entities.Task;
 import com.ibrahim.entities.TaskStatus;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;

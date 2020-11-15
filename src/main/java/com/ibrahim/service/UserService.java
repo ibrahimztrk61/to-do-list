@@ -1,8 +1,8 @@
 package com.ibrahim.service;
 
-import com.ibrahim.controllers.TaskController;
-import com.ibrahim.dto.TaskDto;
-import com.ibrahim.dto.UserDto;
+import com.ibrahim.dtos.TaskDto;
+import com.ibrahim.dtos.UpdateTaskDto;
+import com.ibrahim.dtos.UserDto;
 import com.ibrahim.entities.TaskStatus;
 import com.ibrahim.repository.UserRepository;
 import org.springframework.stereotype.Service;
@@ -26,8 +26,8 @@ public class UserService {
        return userRepository.findUserById(userId);
     }
 
-    public List<UserDto> findAllUsers() {
-        return userRepository.findAllUsers();
+    public List<UserDto> getAllUsers() {
+        return userRepository.getAllUsers();
     }
 
     public void createTask(TaskDto taskDto) {
@@ -42,7 +42,15 @@ public class UserService {
         userRepository.deleteTask(taskId);
     }
 
-    public void chanheStatus(String taskId, TaskStatus taskStatus) {
-        userRepository.changeStatus(taskId, taskStatus);
+    public void changeTaskStatus(String taskId, TaskStatus taskStatus) {
+        userRepository.changeTaskStatus(taskId, taskStatus);
+    }
+
+    public List<UserDto> getUserByName(String userName) {
+        return userRepository.getUserByName(userName);
+    }
+
+    public void updateTask(String taskId, UpdateTaskDto taskDto) {
+        userRepository.updateTask(taskId,taskDto);
     }
 }

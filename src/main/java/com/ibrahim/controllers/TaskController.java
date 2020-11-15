@@ -1,7 +1,7 @@
 package com.ibrahim.controllers;
 
 
-import com.ibrahim.dto.TaskDto;
+import com.ibrahim.dtos.TaskDto;
 import com.ibrahim.entities.Task;
 import com.ibrahim.service.TaskService;
 
