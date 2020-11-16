@@ -34,4 +34,5 @@ public class TaskRepository {
         QueryResult query = couchbaseCluster.query(statement);
         return query.rowsAs(Task.class);
     }
+
 }

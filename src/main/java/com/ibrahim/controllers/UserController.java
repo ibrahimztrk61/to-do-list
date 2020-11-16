@@ -1,7 +1,6 @@
 package com.ibrahim.controllers;
 
 import com.ibrahim.dtos.TaskDto;
-import com.ibrahim.dtos.UpdateTaskDto;
 import com.ibrahim.dtos.UserDto;
 import com.ibrahim.entities.TaskStatus;
 import com.ibrahim.service.TaskService;
@@ -17,12 +16,10 @@ public class UserController {
 
     private final TaskService taskService;
     private final UserService userService;
-    private final UpdateTaskDto taskDto;
 
-    public UserController(TaskService taskService, UserService userService, UpdateTaskDto taskDto) {
+    public UserController(TaskService taskService, UserService userService) {
         this.taskService = taskService;
         this.userService = userService;
-        this.taskDto = taskDto;
     }
 
     @PostMapping
@@ -66,8 +63,8 @@ public class UserController {
     }
 
     @PatchMapping("/taskUpdate/{taskId}")
-    public ResponseEntity<Void> updateTask(@PathVariable String taskId, @RequestBody UpdateTaskDto taskDto) {
-        userService.updateTask(taskId, taskDto);
+    public ResponseEntity<Void> updateTask(@RequestBody TaskDto taskDto) {
+        userService.updateTask(taskDto);
         return ResponseEntity.ok().build();
     }
 

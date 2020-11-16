@@ -1,9 +1,9 @@
 package com.ibrahim.service;
 
 import com.ibrahim.dtos.TaskDto;
-import com.ibrahim.dtos.UpdateTaskDto;
 import com.ibrahim.dtos.UserDto;
 import com.ibrahim.entities.TaskStatus;
+import com.ibrahim.repository.TaskRepository;
 import com.ibrahim.repository.UserRepository;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +13,11 @@ import java.util.List;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final TaskRepository taskRepository;
 
-    public UserService(UserRepository userRepository) {
+    public UserService(UserRepository userRepository, TaskRepository taskRepository) {
         this.userRepository = userRepository;
+        this.taskRepository = taskRepository;
     }
 
     public void createUser(UserDto userDto) {
@@ -50,7 +52,7 @@ public class UserService {
         return userRepository.getUserByName(userName);
     }
 
-    public void updateTask(String taskId, UpdateTaskDto taskDto) {
-        userRepository.updateTask(taskId,taskDto);
+    public void updateTask(TaskDto taskDto) {
+        userRepository.updateTask(taskDto);
     }
 }
