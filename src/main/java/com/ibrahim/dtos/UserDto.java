@@ -11,16 +11,30 @@ public class UserDto {
 
     private String id;
     private String name;
+    private String surname;
     private List<Task> tasks;
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public UserDto() {
         this.id = UUID.randomUUID().toString() ;
         this.tasks = Arrays.asList((new Task(id,"","", TaskStatus.TODO,"")));
     }
 
-    public UserDto(String name,Task task ) {
+    public String getSurname() {
+        return surname;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public UserDto(String name, String surname, Task task ) {
         this.id = UUID.randomUUID().toString() ;
         this.name = name;
+        this.surname = surname;
         this.tasks = (List<Task>) task;
     }
 
